@@ -15,7 +15,7 @@ router.get("/qb/connect", (req: Request, res: Response) => {
     clientId: process.env.QUICKBOOKS_CLIENT_ID!,
     clientSecret: process.env.QUICKBOOKS_CLIENT_SECRET!,
     environment: (process.env.QUICKBOOKS_ENVIRONMENT || "sandbox") as "sandbox" | "production",
-    redirectUri: process.env.QUICKBOOKS_REDIRECT_URI || "http://localhost:3001/api/auth/qb/callback",
+    redirectUri: process.env.QUICKBOOKS_REDIRECT_URI || "http://localhost:3002/api/auth/qb/callback",
   });
 
   const authUri = oauthClient
@@ -37,7 +37,7 @@ router.get("/qb/callback", async (req: Request, res: Response) => {
       refreshToken: "", // not yet available
       realmId: "", // not yet available
       environment: (process.env.QUICKBOOKS_ENVIRONMENT || "sandbox") as "sandbox" | "production",
-      redirectUri: process.env.QUICKBOOKS_REDIRECT_URI || "http://localhost:3001/api/auth/qb/callback",
+      redirectUri: process.env.QUICKBOOKS_REDIRECT_URI || "http://localhost:3002/api/auth/qb/callback",
     });
 
     const tokens = await client.exchangeCode(req.url);
@@ -69,7 +69,7 @@ router.get("/status", async (req: Request, res: Response) => {
         refreshToken: session.qbTokens.refreshToken,
         realmId: session.qbTokens.realmId,
         environment: (process.env.QUICKBOOKS_ENVIRONMENT || "sandbox") as "sandbox" | "production",
-        redirectUri: process.env.QUICKBOOKS_REDIRECT_URI || "http://localhost:3001/api/auth/qb/callback",
+        redirectUri: process.env.QUICKBOOKS_REDIRECT_URI || "http://localhost:3002/api/auth/qb/callback",
       });
       const result = await getCompanyInfo(client);
       if (!result.isError && result.result) {

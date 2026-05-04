@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Template } from "../hooks/useWeeks";
-import { searchCustomers } from "../api/customers";
+import { searchCustomers } from "../services/customers";
 
 interface Props {
   tpl: Template;

@@ -16,7 +16,7 @@ import { errorHandler } from "./middleware/error-handler.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 // Middleware
 app.use(cors({ origin: true, credentials: true }));
@@ -44,7 +44,7 @@ app.use("/api/company", companyRoutes);
 // In production, serve the Vite-built frontend
 const clientDir = path.join(__dirname, "..", "client");
 app.use(express.static(clientDir));
-app.get("*", (_req, res) => {
+app.get("/{*path}", (_req, res) => {
   res.sendFile(path.join(clientDir, "index.html"));
 });
 

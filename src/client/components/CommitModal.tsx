@@ -3,7 +3,7 @@ import { Week, Template } from "../hooks/useWeeks";
 import { fmtRange } from "../utils/dates";
 import { money } from "../utils/money";
 import { Lock, Check, Spinner } from "./icons";
-import { bulkCreateInvoices, CreateInvoicePayload } from "../api/invoices";
+import { bulkCreateInvoices, CreateInvoicePayload } from "../services/invoices";
 import { useAuth } from "../hooks/useAuth";
 
 interface Props {

@@ -23,7 +23,7 @@ export function requireAuth(req: Request, res: Response, next: NextFunction) {
     refreshToken: session.qbTokens.refreshToken,
     realmId: session.qbTokens.realmId,
     environment: process.env.QUICKBOOKS_ENVIRONMENT || "sandbox",
-    redirectUri: process.env.QUICKBOOKS_REDIRECT_URI || "http://localhost:3001/api/auth/qb/callback",
+    redirectUri: process.env.QUICKBOOKS_REDIRECT_URI || "http://localhost:3002/api/auth/qb/callback",
   });
 
   // After the response finishes, persist any rotated tokens back to session

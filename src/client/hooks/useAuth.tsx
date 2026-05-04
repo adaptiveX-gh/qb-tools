@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
-import { getAuthStatus, logout as apiLogout, connectToQuickBooks, AuthStatus } from "../api/auth";
+import { getAuthStatus, logout as apiLogout, connectToQuickBooks, AuthStatus } from "../services/auth";
 
 interface AuthContextValue {
   connected: boolean;
