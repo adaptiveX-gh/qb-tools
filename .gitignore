@@ -2,3 +2,21 @@ node_modules/
 dist/
 .env
 *.log
+
+# Original SPA source (pre-migration)
+*.html
+app.jsx
+app.css
+icons.jsx
+utils.jsx
+colors_and_type.css
+CommitModal.jsx
+LoginPage.jsx
+SignedOutPage.jsx
+SummaryPanel.jsx
+TemplatePanel.jsx
+WeekRow.jsx
+fonts/
+assets/
+uploads/
+.claude/
