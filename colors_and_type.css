@@ -1,0 +1,287 @@
+/* ============================================================
+   AdaptiveX Design System — Colors & Type
+   ============================================================
+   Source of truth for color, typography, and semantic tokens.
+   Pulled directly from the AdaptiveX 2022 brand guide.
+
+   Tagline: THINK BIG. START SMALL. MOVE FAST.
+   ============================================================ */
+
+/* -------- Fonts --------
+   Brand uses Poppins (primary) + Lato (alt body) + Averta (logo & display).
+   Averta is self-hosted from /fonts (Regular + Bold).
+   ----------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
+@font-face {
+  font-family: 'Averta';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('fonts/Averta-Regular.woff2') format('woff2'),
+       url('fonts/Averta-Regular.woff')  format('woff'),
+       url('fonts/Averta-Regular.ttf')   format('truetype');
+}
+@font-face {
+  font-family: 'Averta';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('fonts/Averta-Bold.woff2') format('woff2'),
+       url('fonts/Averta-Bold.woff')  format('woff'),
+       url('fonts/Averta-Bold.ttf')   format('truetype');
+}
+
+:root {
+  /* ---------- ORIGINAL PRIMARY COLORS ----------
+     Used in multiple ways: backgrounds, overlays, accents, fonts. */
+  --ax-purple-blue:  #403D8D;  /* AX Purple Blue   — primary deep purple */
+  --ax-grey-indigo:  #5F58A6;  /* Grey Indigo Purple — softer mid purple */
+  --ax-indigo:       #7669C0;  /* Indigo Purple    — lighter mid */
+  --ax-golden:       #F8C21A;  /* AX Golden Yellow — primary yellow */
+  --ax-white:        #FFFFFF;  /* Pure White       — accents, BG, font */
+  --ax-soft-black:   #212022;  /* AX Soft Black    — used as primary black */
+  --ax-dark-grey:    #010101;  /* AX Dark Grey     — used pri. on black & in print */
+
+  /* ---------- SECONDARY / ALTERNATIVE HUES ----------
+     Accents — used for buttons/icons/fonts in some cases (digital).
+     Sometimes the static + hover/link companion. */
+  --ax-lavender:     #E8E5F8;  /* AX Lavender — typically a font, icon, or link color (hover/lower) */
+  --ax-purple-grey:  #E1E1ED;  /* AX Purple Grey — typically a font, icon, or link color */
+  --ax-pascal:       #AFACD3;  /* Pascal Purple */
+  --ax-deep-blue:    #25295F;  /* Dark Blue Purple — accents, BG, font dark */
+  --ax-pastel-yellow:#FAE193;  /* Pastel Yellow — KEY accent: text on yellow, button/icon on dark BG */
+  --ax-pale-yellow:  #FFF4D3;  /* Pale Pastel Yellow — used as a very light companion to AXGolden */
+  --ax-straw:        #EECF5D;  /* Straw Yellow — a brand-yellow alternative to AXGolden */
+
+  /* ---------- GRADIENTS & BACKGROUND OPTIONS ----------
+     Often used in PPT and design elements; can be used alone or
+     paired with imagery for backgrounds. */
+  --ax-grad-yellow-radial:    radial-gradient(circle at 50% 30%, #FAE7AC 0%, #F8C21A 80%);
+  --ax-grad-indigo-radial:    radial-gradient(circle at 50% 30%, #E1E1ED 0%, #5F58A6 80%);
+  --ax-grad-pascal-radial:    radial-gradient(circle at 50% 30%, #FFF4D3 0%, #AFACD3 80%);
+  --ax-grad-yellow-deepblue:  linear-gradient(180deg, #F8C21A 0%, #25295F 100%);
+  --ax-grad-deepblue-yellow:  linear-gradient(180deg, #25295F 0%, #F8C21A 100%);
+  --ax-grad-circular-radial:  radial-gradient(circle at 50% 50%, #F8C21A 0%, #25295F 100%);
+
+  /* ---------- SEMANTIC FOREGROUND / BACKGROUND ----------
+     Use these in components, not the raw color tokens above. */
+  --ax-fg-1:           var(--ax-soft-black);   /* primary text on light */
+  --ax-fg-2:           #4A4860;                /* secondary text */
+  --ax-fg-3:           #6F6E84;                /* tertiary / muted */
+  --ax-fg-on-dark:     var(--ax-white);
+  --ax-fg-on-dark-2:   var(--ax-lavender);
+  --ax-fg-link:        var(--ax-purple-blue);
+  --ax-fg-link-hover:  var(--ax-indigo);
+  --ax-fg-accent:      var(--ax-purple-blue);  /* purple is the dominant accent */
+  --ax-fg-on-yellow:   var(--ax-purple-blue);  /* primary text on yellow BG */
+
+  --ax-bg-1:           var(--ax-white);
+  --ax-bg-2:           #FAFAFD;                /* subtle off-white */
+  --ax-bg-3:           var(--ax-lavender);     /* muted purple wash */
+  --ax-bg-dark:        var(--ax-deep-blue);    /* dark hero / footer */
+  --ax-bg-darker:      var(--ax-soft-black);
+
+  /* ---------- BORDERS ---------- */
+  --ax-border:         #E1E1ED;                /* hairline */
+  --ax-border-strong:  #C9C7DD;
+  --ax-border-dark:    rgba(255, 255, 255, 0.18);
+
+  /* ---------- RADIUS ---------- */
+  --ax-radius-sm:    6px;
+  --ax-radius-md:    12px;
+  --ax-radius-lg:    20px;
+  --ax-radius-xl:    32px;
+  --ax-radius-pill:  999px;
+
+  /* ---------- SHADOWS ---------- */
+  --ax-shadow-sm:  0 1px 2px rgba(37, 41, 95, 0.06), 0 1px 3px rgba(37, 41, 95, 0.04);
+  --ax-shadow-md:  0 4px 12px rgba(37, 41, 95, 0.08), 0 2px 4px rgba(37, 41, 95, 0.04);
+  --ax-shadow-lg:  0 16px 40px rgba(37, 41, 95, 0.14), 0 4px 8px rgba(37, 41, 95, 0.06);
+  --ax-shadow-yellow:0 8px 24px rgba(248, 194, 26, 0.32);
+
+  /* ---------- SPACING (8pt scale, with a 4 micro) ---------- */
+  --ax-space-1: 4px;
+  --ax-space-2: 8px;
+  --ax-space-3: 12px;
+  --ax-space-4: 16px;
+  --ax-space-5: 24px;
+  --ax-space-6: 32px;
+  --ax-space-7: 48px;
+  --ax-space-8: 64px;
+  --ax-space-9: 96px;
+  --ax-space-10:128px;
+
+  /* ---------- TYPE FAMILIES ---------- */
+  --ax-font-logo:    'Averta', 'Poppins', system-ui, sans-serif;  /* Logo / wordmark only */
+  --ax-font-display: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ax-font-body:    'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ax-font-alt-body:'Lato', 'Poppins', system-ui, sans-serif;
+
+  /* Brand uses ALL CAPS + tracked-out for tag/eyebrow */
+  --ax-font-eyebrow-tracking: 0.14em;
+  --ax-font-display-tracking: -0.01em;
+
+  /* ---------- TYPE SCALE ----------
+     Mobile-first; H1/H2 scale up at md+ via .responsive variants. */
+  --ax-fs-eyebrow:  14px;
+  --ax-fs-overline: 12px;
+  --ax-fs-caption:  13px;
+  --ax-fs-body-sm:  14px;
+  --ax-fs-body:     16px;
+  --ax-fs-body-lg:  18px;
+  --ax-fs-h6:       18px;
+  --ax-fs-h5:       22px;
+  --ax-fs-h4:       28px;
+  --ax-fs-h3:       36px;
+  --ax-fs-h2:       48px;
+  --ax-fs-h1:       64px;
+  --ax-fs-display:  88px;
+
+  --ax-lh-tight:    1.1;
+  --ax-lh-snug:     1.25;
+  --ax-lh-normal:   1.5;
+  --ax-lh-relaxed:  1.65;
+}
+
+/* ============================================================
+   SEMANTIC TYPE STYLES — apply directly via class
+   ============================================================ */
+
+.ax-display {
+  font-family: var(--ax-font-display);
+  font-weight: 700;
+  font-size: var(--ax-fs-display);
+  line-height: var(--ax-lh-tight);
+  letter-spacing: var(--ax-font-display-tracking);
+  color: var(--ax-fg-1);
+}
+
+.ax-h1 {
+  font-family: var(--ax-font-display);
+  font-weight: 700;          /* Poppins Bold for web H1 */
+  font-size: var(--ax-fs-h1);
+  line-height: var(--ax-lh-tight);
+  letter-spacing: var(--ax-font-display-tracking);
+  color: var(--ax-fg-1);
+  text-wrap: balance;
+}
+
+.ax-h2 {
+  font-family: var(--ax-font-display);
+  font-weight: 500;          /* Poppins Medium for H2 web */
+  font-size: var(--ax-fs-h2);
+  line-height: var(--ax-lh-snug);
+  color: var(--ax-fg-1);
+  text-wrap: balance;
+}
+
+.ax-h3 {
+  font-family: var(--ax-font-display);
+  font-weight: 600;
+  font-size: var(--ax-fs-h3);
+  line-height: var(--ax-lh-snug);
+  color: var(--ax-fg-1);
+}
+
+.ax-h4 {
+  font-family: var(--ax-font-display);
+  font-weight: 600;
+  font-size: var(--ax-fs-h4);
+  line-height: var(--ax-lh-snug);
+  color: var(--ax-fg-1);
+}
+
+.ax-h5 {
+  font-family: var(--ax-font-display);
+  font-weight: 600;
+  font-size: var(--ax-fs-h5);
+  line-height: var(--ax-lh-snug);
+  color: var(--ax-fg-1);
+}
+
+.ax-h6 {
+  font-family: var(--ax-font-display);
+  font-weight: 600;
+  font-size: var(--ax-fs-h6);
+  line-height: var(--ax-lh-snug);
+  color: var(--ax-fg-1);
+}
+
+/* Eyebrow / section-label — purple, ALL CAPS, tracked-out.
+   Used everywhere on AdaptiveX site: "OUR CLIENTS", "OUR SERVICES" */
+.ax-eyebrow {
+  font-family: var(--ax-font-display);
+  font-weight: 600;
+  font-size: var(--ax-fs-eyebrow);
+  letter-spacing: var(--ax-font-eyebrow-tracking);
+  text-transform: uppercase;
+  color: var(--ax-purple-blue);
+}
+
+.ax-overline {
+  font-family: var(--ax-font-display);
+  font-weight: 700;
+  font-size: var(--ax-fs-overline);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ax-fg-2);
+}
+
+.ax-body-lg {
+  font-family: var(--ax-font-body);
+  font-weight: 400;
+  font-size: var(--ax-fs-body-lg);
+  line-height: var(--ax-lh-relaxed);
+  color: var(--ax-fg-2);
+  text-wrap: pretty;
+}
+
+.ax-body {
+  font-family: var(--ax-font-body);
+  font-weight: 400;
+  font-size: var(--ax-fs-body);
+  line-height: var(--ax-lh-relaxed);
+  color: var(--ax-fg-2);
+  text-wrap: pretty;
+}
+
+.ax-body-sm {
+  font-family: var(--ax-font-alt-body);
+  font-weight: 400;
+  font-size: var(--ax-fs-body-sm);
+  line-height: var(--ax-lh-relaxed);
+  color: var(--ax-fg-3);
+}
+
+.ax-caption {
+  font-family: var(--ax-font-alt-body);
+  font-weight: 400;
+  font-size: var(--ax-fs-caption);
+  line-height: var(--ax-lh-normal);
+  color: var(--ax-fg-3);
+}
+
+/* ============================================================
+   HTML ELEMENT DEFAULTS (opt-in via .ax-prose wrapper)
+   ============================================================ */
+.ax-prose h1 { @extend .ax-h1; }
+.ax-prose,
+.ax-prose p,
+.ax-prose li {
+  font-family: var(--ax-font-body);
+  font-weight: 400;
+  font-size: var(--ax-fs-body);
+  line-height: var(--ax-lh-relaxed);
+  color: var(--ax-fg-2);
+  text-wrap: pretty;
+}
+.ax-prose strong { color: var(--ax-fg-1); font-weight: 600; }
+.ax-prose a {
+  color: var(--ax-fg-link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  transition: color 160ms ease;
+}
+.ax-prose a:hover { color: var(--ax-fg-link-hover); }

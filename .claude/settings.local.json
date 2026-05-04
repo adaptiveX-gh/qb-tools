@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.freecodecamp.org)",
+      "Bash(pip install -e \".[dev]\")",
+      "Bash(docker version)",
+      "Bash(docker ps -a --format \"table {{.Names}}\\\\t{{.Status}}\\\\t{{.Image}}\")",
+      "Bash(docker compose up -d --build)",
+      "Bash(docker ps --filter name=freqmonitor --format \"{{.Names}}: {{.Status}}\")",
+      "Bash(curl -s http://localhost:8099/health)",
+      "Bash(python -m pytest tests/ -v)",
+      "Bash(docker ps -a --format \"{{.Names}}\")",
+      "Bash(sqlite3 data/freqmonitor.db \".tables\")",
+      "Bash(python3:*)",
+      "Bash(xargs grep -l \"69716ff1ad4081ac\\\\|9c78859a9f2a9127\\\\|c16013161fa2a582\\\\|ca1209a3bb142318\")",
+      "Bash(sqlite3 \"d:/Users/scale/Code/_scaled-agents/freqmonitor/data/freqmonitor.db\" \".tables\")",
+      "Bash(sqlite3 \"d:/Users/scale/Code/_scaled-agents/freqmonitor/data/freqmonitor.db\" \"SELECT error_hash, COUNT\\(*\\) as cnt, container_name, exit_code, MAX\\(created_at\\) as last_at, MIN\\(created_at\\) as first_at FROM agent_failures GROUP BY error_hash ORDER BY cnt DESC;\")",
+      "Bash(sqlite3 \"d:/Users/scale/Code/_scaled-agents/freqmonitor/data/freqmonitor.db\" \"SELECT id, container_name, exit_code, error_hash, substr\\(log_tail, 1, 200\\) as log_preview, created_at FROM agent_failures ORDER BY created_at DESC LIMIT 30;\")",
+      "Bash(python -m pytest tests/test_track_agent.py -v)",
+      "Bash(python -m pytest -v)",
+      "Bash(ls /d/Users/scale/Code/_scaled-agents/freqmonitor/src/*.py)",
+      "Bash(npx tsc -p tsconfig.json --noEmit)"
+    ]
+  }
+}
